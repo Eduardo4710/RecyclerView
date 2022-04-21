@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.recycleview.Product
 import com.example.recycleview.R
 import org.w3c.dom.Text
@@ -21,6 +22,9 @@ class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
         precePdt.text=productsModel.prece.toString()
         existPdt.text=productsModel.existence.toString()
         categoryPdt.text=productsModel.category
+        Glide.with(photoPdt.context)
+            .load(productsModel.photo)
+            .into(photoPdt)
 
 
 
