@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_products"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Imagen del prodctos" />
+
+    <TextView
+        android:id="@+id/tvName_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_products"/>
+    <TextView
+        android:id="@+id/tvPrece_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="$56"
+       app:layout_constraintStart_toEndOf="@id/iv_products"
+        app:layout_constraintTop_toBottomOf="@+id/tvName_product"/>
+
+    <TextView
+        android:id="@+id/tvCategory_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Bebidas"
+        app:layout_constraintStart_toEndOf="@id/iv_products"
+       app:layout_constraintTop_toBottomOf="@+id/tvPrece_product"
+      />
+
+    <TextView
+        android:id="@+id/tvExist_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="8"
+        app:layout_constraintStart_toEndOf="@id/iv_products"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategory_product"
+      />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
