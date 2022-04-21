@@ -7,24 +7,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recycleview.Product
 import com.example.recycleview.R
+import com.example.recycleview.databinding.ItemProductsBinding
 import org.w3c.dom.Text
 
 class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
 
-    val namePdt=view.findViewById<TextView>(R.id.tvName_product)
-    val precePdt=view.findViewById<TextView>(R.id.tvPrece_product)
-    val existPdt=view.findViewById<TextView>(R.id.tvExist_product)
-    val categoryPdt=view.findViewById<TextView>(R.id.tvCategory_product)
-    val photoPdt=view.findViewById<ImageView>(R.id.iv_products)
+    val binding=ItemProductsBinding.bind(view)
+
 
     fun render(productsModel: Product){
-        namePdt.text=productsModel.name
-        precePdt.text=productsModel.prece.toString()
-        existPdt.text=productsModel.existence.toString()
-        categoryPdt.text=productsModel.category
-        Glide.with(photoPdt.context)
+        binding.tvNameProduct.text=productsModel.name
+        binding.tvPreceProduct.text=productsModel.prece.toString()
+        binding.tvExistProduct.text=productsModel.existence.toString()
+        binding.tvCategoryProduct.text=productsModel.category
+        Glide.with(binding.ivProducts.context)
             .load(productsModel.photo)
-            .into(photoPdt)
+            .into(binding.ivProducts)
 
 
 

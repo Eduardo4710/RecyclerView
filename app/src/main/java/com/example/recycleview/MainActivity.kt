@@ -1,21 +1,26 @@
 package com.example.recycleview
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recycleview.adapter.ProductsAdapter
+import com.example.recycleview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       binding= ActivityMainBinding.inflate(layoutInflater )
+        setContentView(binding.root)
         setupRecyclerView()
     }
 
 
     private fun setupRecyclerView(){
-        val recyclerView= findViewById<RecyclerView>(R.id.recyclerProduct)
+        val recyclerView= binding.recyclerProduct
         recyclerView.layoutManager=LinearLayoutManager(this)
         recyclerView.adapter=ProductsAdapter(ProductsList.produts)
 
