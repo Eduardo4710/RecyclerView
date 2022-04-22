@@ -1,14 +1,13 @@
 package com.example.recycleview.adapter
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
+
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recycleview.Product
-import com.example.recycleview.R
 import com.example.recycleview.databinding.ItemProductsBinding
-import org.w3c.dom.Text
+
 
 class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
 
@@ -24,7 +23,11 @@ class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
             .load(productsModel.photo)
             .into(binding.ivProducts)
 
-
-
+        binding.ivProducts.setOnClickListener{
+            Toast.makeText(binding.ivProducts.context,productsModel.name,Toast.LENGTH_SHORT).show()
+        }
+        itemView.setOnClickListener{
+            Toast.makeText(binding.ivProducts.context,productsModel.prece.toString(),Toast.LENGTH_SHORT).show()
+        }
     }
 }
