@@ -14,7 +14,7 @@ class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
     val binding=ItemProductsBinding.bind(view)
 
 
-    fun render(productsModel: Product){
+    fun render(productsModel: Product,  OnClickListener:(Product)-> Unit){
         binding.tvNameProduct.text=productsModel.name
         binding.tvPreceProduct.text=productsModel.prece.toString()
         binding.tvExistProduct.text=productsModel.existence.toString()
@@ -23,11 +23,9 @@ class ProductsViewHolder(view:View):RecyclerView.ViewHolder(view) {
             .load(productsModel.photo)
             .into(binding.ivProducts)
 
-        binding.ivProducts.setOnClickListener{
-            Toast.makeText(binding.ivProducts.context,productsModel.name,Toast.LENGTH_SHORT).show()
-        }
+
         itemView.setOnClickListener{
-            Toast.makeText(binding.ivProducts.context,productsModel.prece.toString(),Toast.LENGTH_SHORT).show()
+          OnClickListener(productsModel)
         }
     }
 }

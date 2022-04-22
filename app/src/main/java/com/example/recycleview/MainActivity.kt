@@ -3,6 +3,7 @@ package com.example.recycleview
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recycleview.adapter.ProductsAdapter
@@ -22,7 +23,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupRecyclerView(){
         val recyclerView= binding.recyclerProduct
         recyclerView.layoutManager=LinearLayoutManager(this)
-        recyclerView.adapter=ProductsAdapter(ProductsList.produts)
+        recyclerView.adapter=ProductsAdapter(ProductsList.produts) { product ->
+            onItemSelected(
+                product
+            )
+        }
 
+    }
+
+    fun onItemSelected(product: Product){
+        Toast.makeText(this,product.name,Toast.LENGTH_SHORT).show()
     }
 }
