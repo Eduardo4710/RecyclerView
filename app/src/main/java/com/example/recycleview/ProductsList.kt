@@ -5,7 +5,7 @@ class ProductsList {
         val produts = listOf<Product>(
             Product("Soda","$15","Bebidas","5",
                 "https://i5.walmartimages.com/asr/d6f012c5-f952-43ec-829b-11de16106a61.47195a5a4251fa846e6d99e6560af58c.jpeg"),
-            Product("Atun","$10","Enlatados","4",
+            Product("Atún","$10","Enlatados","4",
                 "https://superfenix.mx/wp-content/uploads/2021/04/7501041419378-265x265.jpg"),
             Product("Aceite","$26","Cocina","20",
                 "https://http2.mlstatic.com/D_NQ_NP_633549-MLM46256223730_062021-W.jpg"),
