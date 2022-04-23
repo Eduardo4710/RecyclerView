@@ -1,8 +1,8 @@
 package com.example.recycleview
 
 data class Product(val name:String="",
-                   val prece:Int=0,
+                   val prece:String="",
                    val category:String="",
-                   val existence:Int=0,
+                   val existence:String="",
                    val photo:String="") {
 }
