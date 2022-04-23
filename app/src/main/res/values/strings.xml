@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Recycle View</string>
+    <string name="app_name">Recycler View</string>
     <string name="description_tv">Imagen del prodctos</string>
 </resources>
